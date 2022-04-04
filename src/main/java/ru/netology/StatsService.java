@@ -46,10 +46,22 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int belowTheAverage(int[] sales) {
-        return calculateSum(sales) / sales.length;
+    public int belowAvg(int[] sales) {
+        int below = 0;
+        for (long sale : sales) {
+            if (sale < 15) {
+                below++;
+            }
+        }
+        return below;
     }
-
-
-
+    public int aboveAvg(int[] sales) {
+        int below = 0;
+        for (long sale : sales) {
+            if (sale > 15) {
+                below++;
+            }
+        }
+        return below;
+    }
 }

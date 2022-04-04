@@ -53,26 +53,25 @@ class StatsServiceTest {
     }
 
     @Test
-    void shouldCalculateBelowTheAverage() {
+    void shouldBelowAvg() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
 
-        int actual = service.belowTheAverage(sales);
+        int actual = service.belowAvg(sales);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCalculateAboveTheAverage() {
+    void shouldAboveAvg() {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 7;
+        int expected = 5;
 
-        int actual = service.aboveTheAverage(sales);
+        int actual = service.aboveAvg(sales);
 
         assertEquals(expected, actual);
     }
-
 
 }
